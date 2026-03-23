@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>健康管理</title>
+</head>
+
+<body>
+
+<h1>健康管理アプリ</h1>
+
+<button onclick="wake()">起床</button>
+<button onclick="sleep()">就寝</button>
+<button onclick="curves()">カーブス</button>
+
+<p id="log">今日の記録：まだ記録がありません</p>
+
+<button onclick="resetLog()">今日をリセット</button>
+
+<script>
+function wake(){
+ add("起床");
+}
+
+function sleep(){
+ add("就寝");
+}
+
+function curves(){
+ add("カーブス");
+}
+
+function add(text){
+ let today = new Date().toLocaleDateString();
+
+ let data = localStorage.getItem(today);
+
+ if(!data){
+  data = "";
+ }
+
+ data += text + " ";
+
+ localStorage.setItem(today, data);
+
+ show();
+}
+
+function show(){
+ let today = new Date().toLocaleDateString();
+ let data = localStorage.getItem(today);
+
+ if(data){
+  document.getElementById("log").textContent = "今日の記録：" + data;
+ }else{
+  document.getElementById("log").textContent = "今日の記録：まだ記録がありません";
+ }
+}
+
+function resetLog(){
+ let today = new Date().toLocaleDateString();
+ localStorage.removeItem(today);
+ show();
+}
+
+show();
+</script>
+
+</body>
+</html>
