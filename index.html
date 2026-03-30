@@ -19,15 +19,21 @@
 
 <script>
 function wake(){
- add("起床");
+    if(confirm("起床を記録しますか？")){
+        add("起床");
+    }
 }
 
 function sleep(){
- add("就寝");
+    if(confirm("就寝を記録しますか？")){
+        add("就寝");
+    }
 }
 
 function curves(){
- add("カーブス");
+    if(confirm("カーブスを記録しますか？")){
+        add("カーブス");
+    }
 }
 
 function add(text){
