@@ -52,9 +52,9 @@ function show(){
  let data = localStorage.getItem(today);
 
  if(data){
-  document.getElementById("log").textContent = "今日の記録：" + data;
+ document.getElementById("log").innerText = "今日の記録：" + data;
  }else{
-  document.getElementById("log").textContent = "今日の記録：まだ記録がありません";
+ document.getElementById("log").innerText= "今日の記録：まだ記録がありません";
  }
 }
 
