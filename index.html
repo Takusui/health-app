@@ -50,7 +50,10 @@ data += text + " " + now + "\n";
 function show(){
  let today = new Date().toLocaleDateString();
  let data = localStorage.getItem(today);
-
+let yesterday = new Date();
+yesterday.setDate(yesterday.getDate() - 1);
+let yDate = yesterday.toLocaleDateString();
+let yData = localStorage.getItem(yDate);
  if(data){
  document.getElementById("log").innerText = "今日の記録：" + data;
  }else{
