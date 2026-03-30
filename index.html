@@ -54,11 +54,11 @@ let yesterday = new Date();
 yesterday.setDate(yesterday.getDate() - 1);
 let yDate = yesterday.toLocaleDateString();
 let yData = localStorage.getItem(yDate);
- if(data){
+ 
  document.getElementById("log").innerText =
 "今日の記録\n" + (data || "まだ記録がありません") +
 "\n\n昨日の記録\n" + (yData || "記録なし");
- }else{
+ 
  document.getElementById("log").innerText= "今日の記録：まだ記録がありません";
  }
 }
