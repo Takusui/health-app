@@ -39,7 +39,8 @@ function add(text){
   data = "";
  }
 
- data += text + " ";
+ let now = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+data += text + " " + now + " ";
 
  localStorage.setItem(today, data);
 
